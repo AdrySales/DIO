@@ -1,0 +1,38 @@
+_____Git e Github____
+
+-> Git e GIthub são duas tecnologias diferentes porém complementares.
+
+-> O git é um cli(comand grafic interface), isso significa que ele é usado por linha de comando.
+
+-> Diferenças entre comando windows/linux:
+
+   -cd    / -cd >navega entre diretórios
+   -dir   / -ls >Lista os diretórios 
+   -mkdir / -mkdir >cria um diretório
+   -del   / rmdir >Deleta diretório
+
+   OBS:. Com ls -a é possível listar pastas ocultas no diretório.
+   
+-> O principal trabalho do git é garantir e identificar que de um arquivo para o outro houve ou não modificações.
+
+-> SHA1 é o que incripta os arquivos e gera chaves diferentes para versões diferentes do mesmo arquivo.
+
+-> Os 3 tipos básicos de objetos do git são os blobs, tress e os commits, são responsáveis pelo versionamento do cógigo.
+
+-> Um commit contém uma árvore que pode conter várias bloob's
+
+-> Chave ssh gera uma conecçaõ segura entre máquina e servidor. (chave pública e privada)
+
+-> Comandos git:
+   
+   git init   - inicia o repositório do git
+   
+   git add    - Adiciona o diretório ao projeto do github
+   
+   git add .  - Adiciona todas as mudanças do arquivo a branch
+   
+   git commit - Cria o commit 
+   
+-> Os arquivos que se alteram com o comando gir são alterados na própria pasta (repositório local),e não no remoto (github).
+
+-> O repositório local é formado por commits, caso o código não esteja comitado é impossível enviá-lo para o repositório remoto (github).
