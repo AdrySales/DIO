@@ -1,0 +1,99 @@
+__________________________________________________________________________________________________________________________________________________________
+Primeiros Computadores:
+
+Primeira Geração -> Mark 1 (Usado para cálculos.)
+Colossus (Rússia)/ ENIAC (EUA) :Cálculo,estatística (Guerra).;
+
+Segunda Geração -> (Válvulas para transistores) Computadores menores
+
+Terceira Geração   -> Transistores,capacitores,sistemas integrados;
+
+Quarta Geração     -> Computador pessoal, criação do mouse (apple);
+
+Quinta geração      -> Computador quântico, metaverso, criptomoedas
+
+
+__________________________________________________________________________________________________________________________________________________________
+Surgimento da WEB:
+1958: Cabo intercontinental através do oceano que ligava telégrafos.
+
+1950: Guerra fria, corrida espacial, ENIAC, projeto DARPA.
+          Licklider (ideia da internet). Depois de bastante tempo criou a Arpanet.
+
+Criação do tcp/ip: Uso na arpanet, criação de outras redes.Criação de micro-redes.
+
+Criação da www: Baseado no tcp/ip, para padronizar a criação das redes.Primeiro navegador.
+
+
+__________________________________________________________________________________________________________________________________________________________
+Grandes Nomes:
+Grace Murray Hopper: trabalhou no Mak 1, criou uma Linguagem de Programação.
+
+Licklider: Criou a teoria da rede de computadores.
+
+Kahn: TCP/IP, criou e implantou na ARPANET.
+
+Berners-Lee: Inventou o www.
+
+Marc Andreessen: Recriou o navegador, ficou melhor para os usuários.
+
+Bill Gates: Microsoft, Internet Explorer.
+
+Steve Jobs: Apple, primeiro mouse, Smartphone.
+
+__________________________________________________________________________________________________________________________________________________________
+Conceito de Clients:
+Internet: rede de computadores;
+Cliente: Consome a informação do servidor,sites se hospedam em servidores.
+
+Servidor retorna arquivos estáticos (imagens, html,css), para clientes.
+Navegador cria caches no computador,de sites visitados anteriormente para evitar ter que pegar todos os arquivos do servidor quando o site for requisitado novamente.
+
+Refresh na página apaga o cache e pega novamente os arquivos no servidor.
+
+Navegadores diferentes interpretam documentos de formas diferentes, (css).
+
+__________________________________________________________________________________________________________________________________________________________
+Navegadores:
+
+Servem para interpretar arquivos vindos do servidor.
+
+Navegadores para txt,pdf, etc.
+
+É uma ferramenta para usar a internet 
+
+W3C padronização de navegadores.
+
+__________________________________________________________________________________________________________________________________________________________
+Aplicações Web:
+
+São soluções criadas que possuem a internet como meio de comunicação entre cliente e servidor, não sendo necessária sua instalação.
+
+
+Dispositivos Móveis:
+
+Trabalhar com público geral é trabalhar com dispositivos móveis.
+
+
+Servidores:
+
+Servidores podem usar internet para se comunicar com os outros computadores, ou não.Caso não ele é um servidor de rede local.
+
+Tipos de servidores: 
+    Arquivos (armazena e distribui arquivos);
+    Segurança;
+    Streaming (distribui dados);
+    Email (armazena e gerencia emails);
+    WEB (Serve arquivos da internet).
+
+Data centers: Onde ficam vários servidores.
+
+
+__________________________________________________________________________________________________________________________________________________________
+
+Softwares e Hardwares de Servidores:
+
+    Softwares: Windows Server, Ubuntu, Debian, Oracle;
+    Servidor Web (serve de apoio para o sistema operacional): Apache 
+
+Funcionamento do Servidor :Vem uma requisição do cliente(http), o sistema op pede para o servidor processar o pedido . O servidor tem um sistema operacional e o sistema operacional tem um servidor web dentro.
