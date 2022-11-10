@@ -1,0 +1,152 @@
+__________________________________________________________________________________________________________________________________________________________
+-> Formulário:
+
+method=”POST”
+Método GET envia as informações do formulário pela url, não tem segurança. As informações ficam todas à mostra.
+Método POST é o método mais seguro, envia as informações embaralhadas através de uma requisição feita ao servidor.
+
+target=”_blank”
+Decide se as informações do formulário vão ser enviadas por outra aba ou pela mesma.
+
+autocomplete=”off”
+Vai trazer ou não as informações que já foram digitadas anteriormente no campo. 
+
+onsubmit=” ”
+Dentro das aspas ficam ações para fazer após o click do botão, pode ser uma verificação de entrada ou um show alert.
+
+
+
+__________________________________________________________________________________________________________________________________________________________
+-> INPUT:
+
+OUTROS TYPES: EMAIL,NUMBER,URL,DATE (CALENDÁRIO),WEEK (SEMANA DO ANO),MONTH (MÊS DO ANO),CHECKBOX (CAIXA DE MARCAR), RADIO (OPÇÃO DE MARCAR OU NÃO), HIDDEN (CAMPO INVISIVEL,ENVIA  A INFORMAÇÃO QUANDO CLICA O BOTÃO), FILE (ENVIA ARQUIVO) tem um atributo multiples que envia mais de um arquivo, Search (busca).
+
+TYPE=”NUMBER”
+Atributos: max (para número máximo), min (num mínimo), step (pula de tanto em tanto).
+
+TYPE=”RANGE”
+Cria uma range que vai do valor mínimo até o máximo
+
+TYPE=”COLOR”
+Cria um btn que mostra uma caixa de cores.
+
+__________________________________________________________________________________________________________________________________________________________
+-> CHECKBOX x RADIO
+A ideia do checkbox é poder selecionar entre uma e todas as opções existentes. Uma variável pode ter vários valores diferentes, que são as opções. Ou seja uma lista de opções. Um array de opções.
+A ideia do Radio é ser ou um ou outro.
+
+__________________________________________________________________________________________________________________________________________________________
+-> BUTTON
+type=”button” ,é um botão normal que funciona só com javascript.(onclick).
+
+type=”reset”, limpa os campos do formulário que ele está incluido.
+
+type=”submit”, envia o formulário. Tem o evento onsubmit, onde fica a validação dos campos. Enter ativa o botão submit .
+
+__________________________________________________________________________________________________________________________________________________________
+-> SELECT
+Select é um campo que tem uma lista pré-definida de opções que o usuário pode escolher.
+o atributo multiple faz ocorrer a opção de selecionar mais de uma opção.
+
+__________________________________________________________________________________________________________________________________________________________
+-> FORMATAÇÃO DE TEXTOS
+<i> italic
+<b> ou <strong> negrito
+<u> underline
+<font> modifica o estilo da letra. Atributos (color, face (fonte),
+
+<div> e <span> servem para delimitar um espaço dentro da página.
+
+tag display block, ocupa o horizontal inteira do espaço onde ela está ocupando,a <div> é do tipo display block.
+A span não é display block, dá para abraçar os itens que quiser sem desfigurar a construção da página já existente.
+
+<fieldset> Faz um retângulo em volta dos itens dentro dela, atributo legend pode colocar o nome da subdivisão.
+
+<embed> (Não usa mais) , era usado para mídias externas, foi criado para carregar pequenos pedaços da página de forma separada do resto. Vídeos ou outras mídias que demoram muito para carregar eram carregados de forma separada da página. Assim ficava menos pesado.
+
+<iframes> Pode afetar a segurança do site. mesma coisa do embed, abre uma janela de um site dentro de outro. ou mídias também. diferente do embed que só carrega mídia, o iframe carrega páginas inteiras.
+
+Cores: rgb(red,green, blue), hex (rgb só que em hexa), hsl(matriz,saturação e iluminação),rgba (rgb com transparência), hsla(hsl com transparência).
+
+__________________________________________________________________________________________________________________________________________________________
+-> AUDIO VISUAL
+
+<img>
+ atributo que fala o caminho da imagem: (scr)
+jpg ou png (jpg comprime a imagem, perde resolução e recursos, png mais pesado, png tem transparência, jpg fica com borda ).
+width -> largura.
+
+svg é o melhor tipo de arquivo para n perder resolução. Esse tipo de arquivo tem uma tag própria. <svg>
+alt -> atributo da tag imagem que descreve a imagem para leitura do site por robô
+
+
+<audio>
+Dentro da tag audio tem que colocar a <source src=”caminho”/>, que fala o caminho do áudio.
+O atributo controls coloca os controladores de áudio.
+O atributo autoplay faz com que a música comece assim que a página abre
+
+
+<video>
+Dentro da tag audio tem que colocar a <source src=”caminho”/>, que fala o caminho do vídeo.
+O atributo controls coloca os controladores de play.
+Pode ter vários sources dentro da tag vídeo ele carrega o primeiro arquivo que conseguir. Podem ter vídeos com mais de uma terminação pois pode ser que o primeiro arquivo o navegador n consiga rodar.
+
+<track>
+Caso desejado dentro da tag áudio coloca a <source src=”caminho.vtt”/>, que faz com que o vídeo possa ter legenda através do arquivo vtt.
+Atributo: kind=””
+      pode ser description(robô lê),captions(legenda),chapters(diz o que vai ser falado em cada minuto), metadata(dados adicionais)
+
+Atributo: srclang=”en” | “pt-br” // para dizer que tá em english/portuguese
+Estrutura do vtt
+00:00:00 - - > 00:00:00    //minuto inicial - - > minuto final
+legenda
+Atributo defalt: diz qual legenda é padrão.
+
+<iframes>
+Coloca páginas dentro de outras.
+
+
+__________________________________________________________________________________________________________________________________________________________
+-> TABELAS
+
+Por questões de semântica, as tags table deixaram de ser usadas como tags para estruturar o site. <tr> é linha e <td> é coluna
+
+<table>
+<tr>
+<td>Nome</td>
+<td>Idade</td>
+</tr>
+</table>
+
+Atributos : Border(borda),widht(largura),align=center(centraliza a tabela na tela), cellspacing=”15”(aumenta o espaçamento entre as celulas, engordando a borda), cellpading=”15”(aumenta a dist ncia da borda para o conteudo das células), sumary=”descrição” (abre um box  com o texto de descrição quando o leitor passa por cima da tabela).
+
+<tr>
+Siginifica table row,linha da tabela. É composta por colunas (<td>).
+ Para mudar a cor das linhas par: (css)
+table tr:nth-child(even){
+background-color: blue;
+}
+ Para mudar a cor das linhas quando o mouse passar por cima: (css)
+table tr:nth-hover(even){
+background-color: blue;
+}
+
+
+<td> e <th>
+O <th> mostra para a navegador que aquela coluna é um cabeçalho
+
+obs: é importante deixar o cabeçalho o menor possível, para maiores explicações coloca um atributo chamado title=”descrição”,quando o cursor passar por cima ele fala o title.
+
+Atributo : sumary=”descrição”, para leitura de robô assim que chega na coluna o robô lê a descrição.
+
+<tbody> <thead> <tfoot>
+O <tbody> e o <thead> pode funcionar como uma forma de identificar o corpo da tabela. e o <thead> é o cabeçalho
+<tfoot> seria o rodapé da tabela.
+obs: não importa  a ordem dos termos acima no doc html, eles sempre vão ficar na ordem certa <tbody> <thead> <tfoot>
+
+<caption> É uma tag para colocar apenas a descrição da tabela/nome. Fica acima da tabela.
+<caption> Descrição <caption>
+
+
+Atributo colspan =”quantidade” diz a quantidade de colunas que aquela linha vai ocupar
+Atributo rowspan=”quantidade” diz a quantidade de linhas que aquela coluna vai pegar.
