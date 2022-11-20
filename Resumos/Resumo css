@@ -1,0 +1,469 @@
+-> Introdução:
+
+CSS(cascading style sheets) ou folhas de estilo em cascata, serve para estilizar o html.
+
+Foi desenvolvido pela w3c para facilitar a programação em html.
+
+Não é uma linguagem de programação, mas sim de estilos.
+
+Também não é uma linguagem de marcação.
+
+Com css é possível criar layouts, estilizar páginas, animações, formas geométricas, filtros,contadores, entre outros.
+
+
+______________________________________________________________
+-> Formas de declaração do css:
+Método Inlyne: abre um style=”” na tag que se deseja alterar no html e coloca a estilização lá. Não é recomendado essa forma pois a alteração depois é difícil. 
+
+CSS interno: O css vai dentro do head do html <style></style>
+
+CSS externo:Cria um arquivo css e chama dentro da head do html, através da tag <link rel=”stylesheet” href=”caminho.css”/>
+
+
+______________________________________________________________
+
+
+-> Seletores do css:
+Seletor de tags: menciona a tag do html no css
+Ex:. h1{
+       }
+
+Seletor de id: menciona o id do elemento do html no css, o id tem que ser como um cpf, tem que ser único daquele elemento
+Ex:. #texto{
+       }
+
+Seletor de classes: menciona a classe do elemento do html no css, vários elementos podem ter essa classe.Elementos podem ter várias classes diferentes.
+Ex:. .texto{
+       }
+
+Seletor universal: Pega todos os elementos do html e coloca as alterações.
+Ex:. *{    }
+Seletor de atributo: Procura atributos de tags na página, e toda vez que uam tag tiver aquele atributo, as propriedades são aplicadas.
+Ex:. [atributo]{    }
+
+Caso queira aplicar em atributo de tal valor faz:
+Ex:. [atributo=”Carro”]{    }
+
+Caso queira aplicar em atributo que tenha tal valor além de outros valores faz:
+Ex:. [atributo~=”Carro”]{    } // Se o atributo tiver a palavra Carro ele aplica.
+
+Caso queira aplicar em atributo que tenha tal valor seguido de um hífen faz:
+Ex:. [atributo~=”Carro”]{    } // Se o atributo tiver a palavra Carro- ele vai aplicar.
+
+Caso queira aplicar em atributo por pré fixo:
+Ex:. [atributo^=”Carro”]{    } // Se o atributo começar com a palavra Carro ela aplica.
+
+Caso queira aplicar em atributo que tenha o sufixo:
+Ex:. [atributo$=”Carro”]{    } // Se o atributo terminar com a palavra Carro ele vai aplicar.
+
+
+______________________________________________________________
+
+-> Agrupamento de seletores:
+Coloca todos os seletores que quer aplicar a mesma regra separados por vírgula.
+h1, p, h3, .texto, #carro{
+}
+
+Dizer que apenas elementos que pertencem aquela tag e tem aquela classe recebem as modificações.
+p.carro{
+}
+
+ Combinadores descendentes:
+Coloca a modificação em elementos filhos de outros elementos
+li li { //muda os li’s filhos de li’s
+}
+
+#carro li{ //modifica os li’s que são filhos da tag que tem como id carro.
+}
+
+
+Combinadores filho direto:
+Coloca a modificação em elementos que são filhos diretos daquele elemento
+div > p { //muda os p’s filhos diretos de div’s
+}
+
+.fundo-azul > p{ //muda os p’s filhos diretos das div’s que tem fundo-azul de classe
+}
+
+Combinadores irmão adjacente :
+Coloca a modificação no primeiro elemento que está depois do elemento escolhido
+div + p { //muda o p que está logo depois das div’s
+}
+
+Combinadores irmão em geral :
+Coloca a modificação em elementos que estão depois do elemento escolhido
+div ~ p { //muda os p’s que estão depois das div’s
+}
+
+______________________________________________________________
+
+-> Dimensionamento e espaçamento:
+Largura e Altura: width(largura), height(altura). 
+width:auto; // Define a largura de acordo com o tamanho do elemento.
+width:initial; // aplica o valor padrão do width.
+width:inherit; //aplica a largura do elemento pai.
+
+Largura e Altura máxima e mínima: 
+min-width:200px; largura mínima de 200px
+max-width:200px; largura máxima de 200px
+min-height:200px; altura mínima de 200px
+max-height:200px; altura máxima de 200px
+
+
+
+
+Margin: 
+Usado para criar margem em volta dos elementos.
+margin-top: //margem em cima
+
+margin-bottom: // margem em baixo
+
+margin-left: // margem do lado esquerdo
+
+margin-right: // margem do lado direito
+
+margin: // aplica nos 4 lados 
+
+margin: 20px 10px; //aplica 20 em cima e em baixo e 10 nas duas laterais
+
+margin: 20px 10px 40px; //aplica 20 em cima, 10 nas laterias e 40 em baixo.
+
+margin: 20px 10px 40px 30px; //aplica 20 em cima, 10 na direita,  40 embaixo e 30 na esquerda.
+
+margin: auto // deixa o elemento centralizado, ele pega a quantidade de pixels que sobrou do lado do elemento, divide por 2 e coloca o elemento com margem igual a esse valor, deixando ele centralizado.
+
+obs:. A ordem de aplicação segue o sentido horário começando de cima.
+obs:. é possível ter margin negativa, ele entra para dentro da tela
+
+Padding: 
+Aplica um espaçamento interno, separa o conteúdo do elemento das bordas dele. por exemplo um texto dentro de uma div, o padding centraliza o texto.
+OBS:. tem as mesmas propriedades do margin
+
+box SIzing: 
+O tamanho do elemento segue o seguinte princípio: largura + borda + padding. Caso seja preciso que o tamanho final respeite a largura definida para ele é preciso utilizar o box sizing, ai ele vai se ajeitando dentro da largura definida para caber as bordas o padding e os elementos dentro.
+box-sizing: border-box;
+
+______________________________________________________________
+
+-> Cores:
+pré-definidas: cores que são referenciadas pelo nome, tem uma lista de várias cores.
+
+current-color: tem a transparent, define o fundo como transparente e fica a cor do fundo da página. além disso, aplicando a propriedade currentcolor ela segue a cor que coloca na color. 
+Exemplo:. h1{  //a cor da borda do h1 vai ser pink
+              color: pink;
+        border: 1px solid currentcolor;
+        }
+
+
+hex: é composto por # e mais 6 digitos, sendo os 2 primeiros digitos (Vermelho) 2 do meio (verde) e dois do meio (azul). Cada cor 256 tonalidades, são representadas por digitos de 0 até 9 e com as letras de A até F. Sendo 0 o menor valor e F o maior. 
+Ex:. #00FF00;
+Caso queira transparência é só colocar mais 2 digitos depois dos já declarados. Sendo 00 a mais transparente.
+
+
+hex-transparencia:
+
+rgb: para usar as cores por rgb faz:
+color: rgb(0,0,0); /passa o valor numérico de 0 até 255.
+
+rgba: Igual ao rgb só que com transparência, o ‘a’ é o canal alfa : rgb(0,0,0, 0.0); /passa o valor numérico de 0 até 255. e um valor de 0.0 até 1.0 (0.0 é 0 de transparência, 1.0 é transparência total).
+
+hsl: (matriz,saturação, luminosidade) (heu,saturation,lightness), matriz é o grau na roda de cores, saturação é por porcentagem, 0% é cinza e 100% é uma cor total, luminosidade 0% é totalmente preto e 0% e a total luminosidade da cor. ex:. color: hsl (0,100%,50%)
+
+hsla: Igual a o hsl, com um parâmetro a mais igual a rgba 
+ ex:. color: hsla (0,100%,50%, 0.2)
+
+______________________________________________________________
+
+-> Imagens:
+Propriedade object-fit : após redimensionar a img de acordo com as modificações, a propriedade diz como ela deve se comportar de acordo com cada valor da object-fit.
+ object-fit: fill;  ocupa todo o espaço pré definido mesmo se a imagem ficar distorcida.
+ object-fit: contain;  mantém a proporção original, mas é redimensionada para caber no tamanho pré definido.
+
+ object-fit: cover;  a imagem é redimencionada, para preencher todo o espaço pré definido, mas ela não se distorce, ela simplesmente corta o resto da imagem que não couber dentro.
+
+ object-fit none: ignora o tamanho definido e fica no tamanho original, oq não cabe é cortado;  
+
+ object-fit: scale-down;  escolhe entre o contain e o none, o parametro de escolha é  em qual das duas configurações a imagem fica menor.
+
+
+Propriedade object-position : anda junto com a objct-fit, diz como uma imagem deve ser posicionada vertical e horizontalmente. 
+ex:. object-position: 30px 40px; //horizontal e vertical
+obs:. dá para trabalhar com valores negativos.
+propriedades horizontal : left , right,center;
+propriedades horizontal : bottom,top,center,start,end,
+______________________________________________________________
+
+-> Fundo dos Elementos:
+Alterar o fundo dos elementos:
+background-image: url(‘url’), por padrão quando uma imagem é menor que o tamanho do fundo ela se repete.
+
+background-image: linear-gradient (blue,rosa); //faz um degradÊ que vai do blue até o rosa.
+
+background-image: radial-gradient (blue,rosa); //faz um degradÊ que vai do blue até o rosa só que começa do centro e vai até as bordas.
+
+background-image: repeating-linear-gradient (to top,blue,0:20px,rosa,20px 40px); //faz um degradÊ listrado.
+
+background-image: url(‘url’), url(‘url’), cria camadas de imagens.
+
+Redimensionar as imagens de fundo dos elementos:
+Para definir as dimenções:
+background-size:auto; //valor padrão, imagem se ajusta automaticamente ao elemento.
+background-size:cover; //A imagem de fundo ocupa todo o fundo do elemento, mesmo se for maior ou menor, (corta a imagem), caso a imagem for menor ela é aumentada.
+background-size:contain; redimenciona a imagem para que ela aparece totalmente, mesmo que deixe espaço vazio dentro do elemento.
+background-size:300px; //por tamanho
+background-size:50%; //cobre 50% do elemento, a imagem é duplicada.
+background-size: 200px 300px; //altura e largura
+
+Repetição das imagens de fundo:
+Se quise definir se a iamgem vai repetir ou como ela vai se repetir.
+background-repeat:repeat; //vai se repetir para todos os lados até completar a div.
+background-repeat: repeat-x; //vai se repetir só no eixo x;
+background-repeat:repeat-y; //vai se repetir só no eixo y.
+background-repeat:space; //vai se repetir no x e y, mas sem ter imagem cortada, se um espaço n couber toda a imagem ele deixa o espaço em branco.
+background-repeat:round; // se repete totalmente e sem cortar a imagem, para caber ela é redimensionada.
+
+background-repeat:no-repeat; //imagem não deve se repetir.
+Posicionamento das imagens de fundo:
+background-position:botton,left,right, center, 200px, 20px,50%;
+
+Propriedade background attachment:
+Define como o fundo do elemento vai se moviemntar de acordo com a movimentação da rolagem do navegador;
+
+background-attachment: fixed; //fica fixa quando o elemento é rolado, mas se movimenta com a rolagem da página principal
+
+background-attachment:scroll; //fica parado quando rola o elemento e quando rola a página
+
+background-attachment:local; //roda junto com o conteúdo do elemento e parado quando rola a página.
+
+Propriedade background origin:
+Define o ponto de origem da imagem de fundo.
+background-origin: padding-box; //origem no canto superior esquerdo, cobre a área do conteúdo e o padding.
+background-origin: border-box; //origem no canto superior esquerdo,cobre a área do conteúdo o padding e  também a área da borda
+background-origin: content-box; //origem no canto superior esquerdo,cobre somente a área do elemento
+
+Propriedade background clip:
+Permite controlar se a imagem cobre cada um deles (área do elemento, padding e borda).
+
+background-clip: padding-box; //cobre a área do conteúdo e o padding.
+
+background-clip: border-box; //cobre a área do conteúdo o padding e  também a área da borda
+
+background-clip: content-box; //cobre somente a área do elemento
+
+background-clip: text; //o fundo do texto fica com a imagem;
+color:transparent;
+Mesclagem:
+Indica como as imagens de fundo e elementos se misturam, módulos de mesclagem indicam como as cores devem aparecer quando elas se sobrepõem.
+background-blend-mode:multiplay,screen,overlay; vários resultados diferentes.
+ex.: //vai ter como se fosse uma camada da cor azul por cima da imagem.
+background-color:blue;
+background-image: url(‘’):
+background-blend-mode:multiplay;
+
+Propriedade Background:
+Dá para chamar todas as funções do background de uma vez só:
+bcackground:
+url(‘’) /*image*/
+no-repeat /*repeat*/
+fixed /*attachment*/
+padding-box /*origin*/
+;
+______________________________________________________________
+
+-> Bordas:
+Propriedades:
+border-width: é a grossura da borda (20px)
+
+border-style: é o estilo 
+(solid,thin(1px),meidum(medio),thick(grosso),none(nenhuma borda),dotted(bolinhas),doule(duas linhas),grouve e rigde, insed,outsed(bordas estranhas) )
+
+border-color: cor da borda  //uma borda consegue ter várias cores, só colocar as cores em sequência separadas por espaço
+
+border: 10px solid blue; //dá para colocar todas as propriedades de uma vez só. pode aplicar para cada borda escolhida (border-left,border-bottom,border-right).
+
+border-radius:10px; //arredonda a borda 
+Bordas com imagens:
+border-image-source:url(‘caminho’); //caminho da imagem que vai usar para a borda
+
+border-image-slice:;  //consegue dividir a imagem em regiões, slice=fatia, após dividir o css pega as partes que serão usadas no elemento e descarta o resto.
+
+border-image-width:10px;  //consegue definir a largura da imagem da borda;
+
+border-image-repeat:;  //serve para controlar se a imagem deve ou não repetir
+argumentos: repeat(repete a iamgem para repetir até complestar o espaço), stretch(tira o meio da imagem e estica os cantos para caber no espaço sem repetir), round(rem=dimenciona a estrela para caber no espaço), space (adiciona esṕaços entre os recortes da imagem para caber sem repetição).
+
+
+border-image-outset:;  //serve para definir a distância da borda para o elemento.  
+
+border-image: //exemplo resumido
+url(‘’) slice width autset repet;
+______________________________________________________________
+
+-> Fontes:
+
+Existem tipos genéricos de fontes: Serifada,sans-serif, display(enfeitadas), manuscritas(handwriting), monoespaçadas
+font-family:;
+
+Para utilizar fontes importadas:
+@font-face{
+font-family: nome;
+src: url(“arquivoDaFonte.ttf”);
+}
+
+font-weight : bold; //deixa a letra em negrito
+
+Para importar folhas de fonte:
+@import url (‘url’);
+
+Para mudar tamanho da fonte:
+font-size: 20px; //propriedades: xx-small, x-small,small, medium,large, x-large, xx-large. smaller(deve ser menor que a fonte pai),larger(deve ser maior que a fonte pai).
+
+Para mudar o estilo da fonte:
+font-atyle: ; //pode ser nomal,italic ou oblique
+
+
+Para mudar a espessura da fonte:
+font-weight: ; // aceita valores de 100 até 900, normal, bold(negrito), 
+
+Fontes com font-variant:
+font-variant: small-caps ; //deixa as letras todas em maiúsculo
+
+Fonte-stretch: 
+font-stretch: ; ele vai manipulando as letras para ficarem mais espaçadas ou não
+
+Altura da linha: 
+line-height: 2; //pega o tamanho da fonte e multiplica por 2, esse resultado vai ser o tamanho do espaçamento.
+
+Na tag font: 
+font{
+style
+variant
+weight
+line-height
+family
+}
+
+
+
+
+
+
+
+
+_____________________________________________________________
+-> Textos:
+
+Propriedade text-transform: //none,uppercase,capitalize,lowercase(minusculo),inherit
+
+Propriedade text-Align: //alinhar o texto,left,hight,center,justify
+
+Propriedade text-Decoration: //adiciona ou remove linhas(sublinhado). none(tira o sublinhado), underline(linha a baixo do texto), overline(em cima), line-through(no meio do texto).
+
+Dentro dela tem 4 atributos : 
+-line(tipo de linha: overline,undeline,none…), 
+
+-style(tipo de linha que vai adicionar: solid, double(linha dupla),dotted(pontinhos), dashed(linha de tracinhos), wavy(ondinhas).
+
+-color: cor;
+
+-thickness: (espessura da linha : 5px;)
+
+
+Propriedade text-ident: //recuo da primeira linha, parágrafo. (valores numéricos).
+
+Propriedade letter-spacing/word-spacing: //espaço entre as letras/palavras
+
+Propriedade white-space: //define como os espaços em branco do texto vão se comportar. normal(não importa a quantidade espaços só considera um), nowrap( não importa a quantidade espaços só considera um, e as quebras de linhas são ignoradas), pre(o espaço em branco fica na quantidade que tem), pre-line (as sequencias de espaço em branco fica em um unico espaço, tem quebra de linha quando tem no texto e quando chega no limite das bordas) pre-wrap(texo quebra quando necessário e quando pedido e os espaços em branco são preservados), breack-spaces.
+
+Propriedade word-wrap: //caso uma palavra seja muito grande e não caiba em uma linha, essa propriedade vai definir se os limites da linha devem ser respeitados e a palavra é quebrada (break-word) ou não (normal).
+
+Propriedade word-break: // dá para mudar quando vão acontecer as quebras de linha. A diferença entre wrap e break, é que no break com o valor break-all, a palavra começa a ser escrita e é dividida quando chega a quebra de linha. keep-all(caso seja alguma linhagem oriental, o texto não deve ser quebrado mesmo que ultrapasse os limites do elemento).
+
+Propriedade writing-mode: //mudar a orientação do texto, ler de cima para baixo, do lado para o outro. horizontal-tb(horizontal da esquerda para direita, próxima linha a baixo da anterior), vertical-rl(direita para esquerda, próxima linha vertical a esquerda da anterior), vertical-lr (vertical de cima para baixo, próxima linha a direita da anterior).
+
+Propriedade text-overflow: // define como vai mostrar pro user que tem mais conteúdo que ele não consegue ler naquele elemento. 
+clip (padrão, n acontece nada)
+ellipsis (adc …)
+string // ‘ver mais >’ só funciona no firefox, é um textinho
+
+
+______________________________________________________________
+-> Sombras:
+Propriedade box-shadow: 10px 20px  5px -7px red ; horizontal vertical desfoque propagação cor;
+
+Propriedade box-shadow: inset 10px 20px  5px -7px red ; horizontal vertical desfoque propagação cor; //inset deixa a sombra interna
+
+obs: é possível ter  a sombra interna e externa ao mesmo tempo.
+
+filter: drop-shadow(10px 10px 5px gray) aplica uma sombra em volta dos elementos que compõem a imagem e não da imagem em si.
+
+tex-shadow: 10px 10px 5px color; //aplica sombra na letra. terceiro valor é o desfoque
+
+
+
+
+
+_____________________________________________________________
+-> Outros:
+Transparência de elementos, vão de 0(totalmente transparente) até 1(sem transparência)
+opacity: 0.2; 
+
+overflow: muitas vezes elementos não cabem dentro dos limites, o overflow fala como o elemento deve se comportar quando isso acontecer
+visible; não faz nada, deixa o texto transbordar de boas;
+hidden; o conteúdo é cortado e o que cortou n dá para ver;
+scroll; cria um scroll, uma barra de rolagem apr ao usuário ver o contúdo completo.
+
+auto; adiciona um scroll mas a barra de rolagem pode aparecer ou não de acordo do quanto o conteúdo passar do tamanho pré definido.
+
+overflow-x:; para quando transbordar na vertical;
+overflow-y:; para quando transbordar na horizontal;
+
+RESET CSS: tira o padrão do navegador e bota um padrão do próprio projeto, isso faz com que o site fique igual em todos os navegadores. Tem pronto na internet.
+
+Caso não queira usar o arquivo, faz:
+*{
+padding :0;
+margin:0;
+vertical-align: baseline;
+list-style: none;
+border:0;
+}
+____________________________________________________________
+-> Atributo:
+Text-transform:uppercase; //deixa todas as letras do texto em maiuscula.
+
+____________________________________________________________
+-> Unidades de medida:
+São divididas em duas categorias, absolutas e relativas;
+
+São possíveis encontrar valores: integer,number(decimais),percentage,dimension(length,angle,time,resolution) tem unidades de medida.
+
+absolutas: cm,mm,polegadas(in),pixel(px). São unidades fixas que não dependem do dispositivo.
+
+A mais usada é o pixel. A densidade de pixels define a resolução da tela.
+
+Pixel físico e pixel lógico, 1 pixel lógico pode ficar definido em mais de um pixel físico para que a resolução fique confortável para o usuário, ficar em um tamanho bom para enxergar.
+
+relativas: São calculadas se baseando em outro elemento, pode variar de acordo com o dispositivo, a vantagem é que o elemento se adapte ao dispositivo que ele está sendo visto.
+
+Unidade de medida porcentagem: é  relativo ao elemento pai.
+
+Unidade de em: Definir o tamanho da fonte do elemento filho de acordo com o valor do tamanho da fonte pai.
+ex: font-size:2em; o tamnho dessa fonte vai ser 2 vezes o tamanho da fonte pai.
+
+Unidade de medida rem: semelhante ao em, o rem não pega o elemento pai, pega o elemento raiz, que é do html. Geralmente o padrão é 16px;
+
+
+Viewports: viewport é a área visível de um dispositivo. Vw a unidade de medida se relaciona a isso, 1 vw é 1% da área da viewport.
+vh é a altura da área visível
+
+Unidade de medida ex e ch:
+ex usa o tamanho do caractere x em maiúsculo para parâmetro de altura
+ch usa o caractere 0 para definir a largura, e quantos caracteres cabem naquele espaço.
+
+
+
+
+Calculando valores com css:
+Existe a função calc que dá para fazer calculos para definir tamanhos de fonte e elementos.
+ex:. width: calc(100%-30px);
