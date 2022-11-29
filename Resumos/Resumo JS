@@ -1,0 +1,157 @@
+Mostrar no terminal:
+console.log()
+
+Declarar váriavel:
+let nome
+
+Declarar constante:
+const nome
+
+
+Deixar o resultado com 2 casas decimais:
+console.log(nomeVariavel.toFixed(2));
+
+Boolean:
+tipo de variável que pode assumir dois valores opostos, true ou false
+
+Sinal de =:
+= atribui
+== verificação de igualdade ignorando o tipo da variável
+=== verificação de igualdade, levando o tipo da variável
+
+Math.pow(valor1,valor2):
+Retorna à base elevada ao expoente.
+
+Função:
+function nomeDaFuncao(){
+    conteúdo da função
+}
+Obs:. Funções sem retorno são procedimentos.
+Obs:. Funções podem se comportar como variáveis normais
+D:
+
+Função normal:Executa e depois tem que chamar ela.
+funcion nomeFuncao (){
+
+}
+nomeFuncao(); 
+
+Função imediatamente chamada:Executa e se chama sozinha.
+(funcion nomeFuncao (){
+
+})(); 
+
+Função não nomeada:Só existe dentro daquele trecho não pode ser referenciada
+(funcion  (){
+
+})(); 
+
+Objeto:
+É uma coleção de valores 
+const pessoa={
+nome: ‘Yasmim’,
+idade:25
+}
+console.log(pessoa.nome);
+
+delete pessoa.nome; //deleta o atributo nome de pessoa
+
+Função dentro de um objeto é chamada de método.
+const pessoa={
+nome: ‘Yasmim’,
+idade:25
+
+descrever: function(){
+console.log(`meu nome: ${this.nome},minha idade:${this.idade}´);
+}
+}
+pessoa.descrever();
+
+
+Forma de referenciar atributos de objetos de forma dinâmica:
+pessoa[‘nome’]=’teste’; //se pessoa tiver esse atributi nome atribua o valor teste a ele.
+
+
+
+
+Classes:
+class Pessoa{
+    nome;
+    idade;
+
+    constructor(nome,idade){
+        this.nome=nome;
+        this.idade=idade;
+}
+    descrever (){
+console.log(`meu nome: ${this.nome},minha idade:${this.idade}´);
+    }
+}
+const vitor=new Pessoa(‘Vitor Sousa’ , 25);
+
+
+Classe é a definição do que é um objeto, e o objeto é ocorrência daquela classe.
+Método construtor é chamado toda vez que a classe é instanciada,toda vez que um novo objeto é criado.
+
+Arrays:
+const alunos =[‘ana’,’pedro’,’julia’];
+alunos[3]=’carlos’;
+alunos.push(‘Ivi’); //coloca ivi na última posição
+alunos.pop(); //tira o último item da lista
+alunos.shift();//tira o primeiro item da lista
+alunos.length //mostra o tamanho da lista
+
+
+
+Função gets e prints:
+Usar arquivos diferentes, um com funções e outro com o código principal
+
+Arquivo das funções:
+function gets( ){
+    return 10;
+}
+
+function print( texto ){
+    console.log(texto);
+}
+
+module.exports = {gets,print};
+
+Arquivo Principal:
+const funcoes = require (‘./nomeArquivo’);
+console.log( funcoes.gets( ) );
+
+
+Adicionar evento de click no js:
+const btnTeste = document.getElementById(“btnTeste”)
+btnTeste.addEventListener(“click”,function () {
+
+})
+
+Protocolo http:
+É sempre uma interação client-server.
+Para montar uma requisição hhtp precisa:
+    URL, composta por (ip/path(identificação do recurso)), o ip seria o domínio do site (o nome), e os servidores dns sabem converter esse domínio em ip. O que vem depois do ip é o path, o caminho do que você quer naquele servidor.
+
+TIPO DE SOLICITAÇÃO: toda vez que for fazer uma requisição para o servidor ela tem um tipo, pode ser: get,post,delete,path.
+get na url significa que quer buscar 
+put na url é atualizar
+delete na url é deletar
+post na url é  adicionar 
+
+Existem também áreas de transferência de dados, é por onde se informa o dado que você quer. 
+A path é a mais simples, que vai pelo / , após a barra se informa o dado 
+
+Também tem a KerryString, tudo que vem antes do ? é ip e depois vem a requisição de dados. Tem uma estrutura de chave valor, exemplo
+?type=”grama” pode usar & para concatenar chaves valores.
+
+Também tem como fazer uma limitagem para a quantidade de dados que vão ser exibidos, limit e offset, o limit diz quantos dados por vez e o offset o índice do dado naquela página, eles se comportam como chave de valor.
+
+Existem também uma espécie de configuração da requisição, que são os headers, onde vão ser passados dados que fazem sentido para configurar aquela requisição. Por exemplo o accept, que diz quais tipos de dados serão aceitos como resposta, também o authorization que informa autorizações.
+Request headers e response headers são as configurações da requisição.
+
+Dependendo do método utilizado seja ele GET,POST,DELETE Ou PUT , essa requisição vai ter um corpo que é o body.O body é o dado que se quer trafegar, o get não tem body na requisição, já o post tem, pois o post coloca algum dado novo, então tem que enviar ele,pode colocar dados grandes no body, o dado vai de acordo com o content type. O body pode ter tanto na requisição como na resposta.
+
+Uma requisição é composta por url,request method, requests headers e pelo body.
+Uma resposta é composta por status code (o que aconteceu com a requisição se foi sucesso ou falha por exemplo), response headers e o response body.
+
